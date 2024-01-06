@@ -20,7 +20,7 @@
         ?>
 
         <img src="<?php echo $logo[0]; ?>" alt="">
-        <a href="<?php get_bloginfo  ?>"></a>
+        <a href="/"><?php echo get_bloginfo('name');?></a>
 
         <nav>
 
