@@ -22,3 +22,11 @@ jobs:
         FTP_USERNAME: ${{ secrets.polypress_ftp_username }}
         FTP_PASSWORD: ${{ secrets.polypress_ftp_password }}
         ARGS: --delete
+
+    - name: Deploy to Polykit Changelog
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: ftp.borishrncic.com
+        FTP_USERNAME: ${{ secrets.polykit_log_ftp_username }}
+        FTP_PASSWORD: ${{ secrets.polykit_log_ftp_password }}
+        ARGS: --delete
