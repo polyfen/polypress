@@ -24,7 +24,7 @@ function polypress_register_styles(){
 
     $version = wp_get_theme()->get('Version');
 
-    wp_enqueue_style('polypress-style', get_template_directory_uri() . '/styles.css', array('polypress-polykit'), $version, 'all');
+    wp_enqueue_style('polypress-style', get_template_directory_uri() . '/style.css', array('polypress-polykit'), $version, 'all');
 
     wp_enqueue_style('polypress-polykit',"https://polykit.xyz/app/css/polykit-v0-1.css", array(), '0.1', 'all');
     
