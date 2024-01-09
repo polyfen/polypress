@@ -19,11 +19,10 @@
         
         ?>
 
-        <img src="<?php echo $logo[0]; ?>" alt="">
+        <img src="<?php echo $logo[0]; ?>" alt="" class="logo">
         <a href="/"><?php echo get_bloginfo('name');?></a>
 
         <nav>
-
             <?php
                 wp_nav_menu(
                     array(
@@ -34,6 +33,6 @@
                     )
                 );
             ?>
-            
         </nav>
+        
     </header>

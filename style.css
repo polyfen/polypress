@@ -6,3 +6,8 @@ Author URI: https://thepolyfengroup.com
 Description: TBD.
 Version: 0.1
 */
+
+header img.logo {
+    height: 40px;
+    width: auto;
+}
