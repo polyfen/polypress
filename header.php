@@ -17,8 +17,10 @@
         
         ?>
 
-        <img src="<?php echo $logo[0]; ?>" alt="" class="logo">
-        <a href="/"><?php echo get_bloginfo('name');?></a>
+        <a href="/" class="logo">
+            <?php echo get_bloginfo('name');?>
+            <span style="background-image:url('<?php echo $logo[0]; ?>')"></span>
+        </a>
 
         <nav>
             <?php
