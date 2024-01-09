@@ -2,18 +2,31 @@ on:
   push:
     branches:
       - main
-name: 🚀 Deploy to Polykad
+name: 🚀 Deploy to Production
 jobs:
   web-deploy:
-    name: 🎉 Deploy
+    name: POLYKAD 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
+    - name: POLYKAD 🚚 Get latest code
       uses: actions/checkout@v2
     
-    - name: 📂 Sync files
+    - name: POLYKAD 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
         server: ftp.borishrncic.com
         username: ${{ secrets.polykad_ftp_username }}
         password: ${{ secrets.polykad_ftp_password }}
+  web-deploy:
+    name: POLYPRESS 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: POLYPRESS 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: POLYPRESS 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ftp.borishrncic.com
+        username: ${{ secrets.polypress_ftp_username }}
+        password: ${{ secrets.polypress_ftp_password }}
