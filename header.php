@@ -5,7 +5,7 @@
     <?php wp_head(); ?>
 
 </head>
-<body class="dark-mode">
+<body class="light-mode">
     <header>
 
         <?php
