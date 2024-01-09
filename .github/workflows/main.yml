@@ -1,32 +1,24 @@
-on:
-  push:
-    branches:
-      - main
-name: 🚀 Deploy to Production
+on: push
+name: Publish Website
 jobs:
-  web-deploy:
-    name: POLYKAD 🎉 Deploy
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - name: POLYKAD 🚚 Get latest code
-      uses: actions/checkout@v2
-    
-    - name: POLYKAD 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: ftp.borishrncic.com
-        username: ${{ secrets.polykad_ftp_username }}
-        password: ${{ secrets.polykad_ftp_password }}
-  web-deploy:
-    name: POLYPRESS 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: POLYPRESS 🚚 Get latest code
-      uses: actions/checkout@v2
-    
-    - name: POLYPRESS 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: ftp.borishrncic.com
-        username: ${{ secrets.polypress_ftp_username }}
-        password: ${{ secrets.polypress_ftp_password }}
+    - uses: actions/checkout@master
+
+    - name: Deploy to Polykad
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: ftp.borishrncic.com
+        FTP_USERNAME: ${{ secrets.polykad_ftp_username }}
+        FTP_PASSWORD: ${{ secrets.polykad_ftp_password }}
+        ARGS: --delete
+
+    - name: Deploy to Polypress
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      env:
+        FTP_SERVER: ftp.borishrncic.com
+        FTP_USERNAME: ${{ secrets.polypress_ftp_username }}
+        FTP_PASSWORD: ${{ secrets.polypress_ftp_password }}
+        ARGS: --delete
