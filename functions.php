@@ -7,14 +7,6 @@ function polypress_theme_support(){
     add_theme_support('post-thumbnails');
 }
 
-// Add theme support for custom logo
-add_theme_support('custom-logo', array(
-    'height'      => 50, // Adjust the height as needed
-    'width'       => 250, // Adjust the width as needed
-    'flex-height' => true,
-    'flex-width'  => true,
-));
-
 add_action('after_setup_theme', 'polypress_theme_support');
 
 function polypress_menus(){

@@ -10,11 +10,9 @@
 
         <?php
         
-        if(function_exists('the_custom_logo')){
-
+        if (function_exists('the_custom_logo')) {
             $custom_logo_id = get_theme_mod('custom_logo');
-            $logo = wp_get_attachment_image_src($custom_logo_id);
-
+            $logo = wp_get_attachment_image_src($custom_logo_id, 'full'); // Use 'full' to get the original image size
         }
         
         ?>
