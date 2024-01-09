@@ -1,4 +1,8 @@
 <?php
+/*
+Template Name: Blog Posts
+*/
+
     get_header();
 ?>
 
