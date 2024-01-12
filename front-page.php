@@ -10,7 +10,7 @@
 
 <hr class="secondary-separator">
 
-<section>
+<section class="container">
     <?php
     if (have_posts()) {
         while (have_posts()) {
@@ -20,6 +20,7 @@
                 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <?php the_excerpt(); ?>
             </article>
+            <hr class="secondary-separator">
     <?php
         }
     }
