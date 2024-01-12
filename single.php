@@ -1,23 +1,24 @@
 <?php
-/*
-Template Name: Blog Posts
-*/
-
     get_header();
 ?>
 
-<article class="container">
-
-<?php
-    if ( have_posts() ) {
-        while ( have_posts() ) {
+<section class="container">
+    <?php
+    if (have_posts()) {
+        while (have_posts()) {
             the_post();
-            get_template_part( 'template-parts/content', 'blog' );
+
+            get_template_part('template-parts/content', 'article');
+    ?>
+            <article>
+                <h2 class="heading-1"><?php the_title(); ?></h2>
+            </article>
+            <hr class="secondary-separator">
+    <?php
         }
     }
-?>
-
-</article>
+    ?>
+</section>
 
 <?php
     get_footer();
