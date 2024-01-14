@@ -9,15 +9,13 @@
             the_post();
 
             get_template_part('template-parts/content', 'article');
+        }
+    }
     ?>
             <article>
                 <h2 class="heading-1"><?php the_title(); ?></h2>
             </article>
             <hr class="secondary-separator">
-    <?php
-        }
-    }
-    ?>
 </section>
 
 <?php
